@@ -1,0 +1,127 @@
+/* ─────────────────────────────────────────────
+   Global Variables (Breezy Autumn)
+   ───────────────────────────────────────────── */
+
+* {
+    font: "Figtree 13";
+
+    /* Layout */
+    g-spacing: 10px;
+    g-margin: 0;
+    g-padding: 8px;
+    b-radius: 3px;
+    w-padding: 12px;
+
+    /* Backgrounds */
+    background:     #11111be6;  /* --bg-4 */
+    background-alt: #1e1e2ee6;  /* --bg-2 */
+
+    /* Text */
+    foreground:     #cdd6f4ff;  /* --text-3 */
+    foreground-dim: #a6adc8ff;  /* --text-4 */
+
+    /* Accent (selection) */
+    selected:       #89b4faff;  /* --accent-2 */
+    selected-text:  #11111bff;
+
+    /* Border */
+    border-color:   #11111be6;  /* subtle warm border */
+}
+
+/* ─────────────────────────────────────────────
+   Configuration
+   ───────────────────────────────────────────── */
+
+configuration {
+    modi: "drun";
+    show-icons: true;
+    display-drun: "";
+}
+
+/* ─────────────────────────────────────────────
+   Window
+   ───────────────────────────────────────────── */
+
+window {
+    transparency: "real";
+    width: 450px;
+
+    background-color: @background;
+    border: 1px;
+    border-radius: @b-radius;
+    border-color: @border-color;
+    padding: @w-padding;
+}
+
+/* ─────────────────────────────────────────────
+   Layout
+   ───────────────────────────────────────────── */
+
+mainbox {
+    spacing: @g-spacing;
+    margin: @g-margin;
+    padding: @g-padding;
+    children: ["inputbar", "listview", "message"];
+}
+
+inputbar {
+    children: ["prompt", "entry"];
+    spacing: @g-spacing;
+}
+
+prompt {
+    text-color: @foreground;
+}
+
+entry {
+    placeholder: "Search Apps";
+    text-color: @foreground;
+    placeholder-color: @foreground-dim;
+}
+
+/* ─────────────────────────────────────────────
+   List View
+   ───────────────────────────────────────────── */
+
+listview {
+    columns: 1;
+    lines: 9;
+    fixed-height: true;
+    fixed-columns: true;
+    cycle: false;
+    scrollbar: false;
+    border: 0;
+}
+
+/* ─────────────────────────────────────────────
+   Elements
+   ───────────────────────────────────────────── */
+
+element {
+    spacing: @g-spacing;
+    margin: @g-margin;
+    padding: @g-padding;
+    border-radius: @b-radius;
+    background-color: transparent;
+    text-color: @foreground;
+    border: 0;
+}
+
+element alternate.normal {
+    background-color: @background-alt;
+}
+
+element selected.normal,
+element selected.active {
+    background-color: @selected;
+    text-color: @selected-text;
+}
+
+/* ─────────────────────────────────────────────
+   Message
+   ───────────────────────────────────────────── */
+
+message {
+    background-color: transparent;
+    border: 0;
+}

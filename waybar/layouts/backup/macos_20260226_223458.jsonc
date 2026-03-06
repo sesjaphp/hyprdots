@@ -1,0 +1,49 @@
+{
+  // General Waybar configuration
+  "layer": "top",
+  "position": "top",
+  "margin": 0,
+  "spacing": 8,
+  "border-size": 1,
+  "padding": 2,
+  "include": ["$XDG_CONFIG_HOME/waybar/includes/includes.json"],
+
+  // Minimal modules
+  "modules-left": [
+    "custom/launcher",
+    "custom/help#macos"
+  ],
+  "modules-right": [
+    "clock",
+    "tray"
+  ],
+
+  // Module-specific configurations
+  "custom/launcher": {
+    "format": "",
+    "on-click": "hyde-shell rofilaunch"
+  },
+
+  "custom/help#macos": {
+    "format": "Help",
+    "tooltip": true,
+    "tooltip-format": "Right-click for HyDE options",
+    "return-type": "plain",
+    "on-click": "hyde-shell keybinds_hint",
+    "menu": "on-click-right",
+    "menu-file": "${HYDE_WAYBAR_MENU_DIR:-$XDG_DATA_HOME/waybar/menus}/hyde-menu.xml",
+    "menu-actions": {
+      "theme-next": "hyde-shell themeswitch -n",
+      "theme-previous": "hyde-shell themeswitch -p",
+      "theme-select": "hyde-shell themeselect",
+      "waybar-restart": "hyde-shell waybar -ubg",
+      "waybar-layout-next": "hyde-shell waybar --update --next",
+      "waybar-layout-previous": "hyde-shell waybar --update --prev"
+    }
+  },
+
+  "clock": {
+    "format": "{:%H:%M}",
+    "tooltip-format": "{:%A, %B %d, %Y}"
+  }
+}
