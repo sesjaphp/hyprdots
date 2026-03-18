@@ -5,6 +5,7 @@
   "include": [
     "$XDG_CONFIG_HOME/waybar/modules/*json*",
     "$XDG_CONFIG_HOME/waybar/includes/includes.json",
+    "$XDG_CONFIG_HOME/waybar/modules/*.jsonc",
   ],
   "height": 34,
   "padding": 4,
@@ -12,6 +13,7 @@
   "modules-center": ["clock"],
   "modules-right": [
     "tray",
+    "custom/updates",
     "network",
     "wireplumber",
     "battery",
@@ -45,7 +47,6 @@
     "persistent-workspaces": {
       "1": [],
       "2": [],
-      "3": [],
     },
   },
   "memory": {
@@ -112,5 +113,15 @@
       "hibernate": "systemctl hibernate",
     },
     "interval": 86400,
+  },
+  "custom/updates": {
+    "exec": "hyde-shell system.update",
+    "return-type": "json",
+    "format": " {0} ",
+    "rotate": 0,
+    "on-click": "hyde-shell app system.update.sh up",
+    "interval": 86400,
+    "tooltip": true,
+    "signal": 20,
   },
 }
