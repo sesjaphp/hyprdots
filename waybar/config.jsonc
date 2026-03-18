@@ -72,7 +72,7 @@
     "tooltip-format-disconnected": "Disconnected",
     "on-click": "~/.config/rofi/wifi/wifi.sh &",
     "on-click-right": "~/.config/rofi/wifi/wifinew.sh &",
-    "interval": 5,
+    "interval": 1500,
     "nospacing": 1,
   },
   "wireplumber": {
