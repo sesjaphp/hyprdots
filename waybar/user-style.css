@@ -48,8 +48,12 @@ window#waybar.hidden {
   background-color: #f38ba8;
 }
 
+#custom-updates {
+  padding: 0 2px;
+}
+
 #memory,
-#custom-cliphist,
+#custom-updates,
 #custom-power,
 #battery,
 #backlight,
@@ -95,6 +99,10 @@ window#waybar.hidden {
 #battery.charging {
   background-color: #a6e3a1;
   color: #181825;
+}
+
+#custom-updates {
+  background-color: #a6e3a1;
 }
 
 #backlight {
