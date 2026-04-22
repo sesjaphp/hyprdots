@@ -1,0 +1,1 @@
+/home/php/.local/share/waybar/layouts/hyprdots/03.jsonc 
