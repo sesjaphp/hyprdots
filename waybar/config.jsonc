@@ -9,14 +9,13 @@
   ],
   "height": 34,
   "padding": 4,
-  "modules-left": ["custom/clipboard", "hyprland/workspaces", "mpris"],
+  "modules-left": ["hyprland/workspaces", "mpris"],
   "modules-center": ["clock"],
   "modules-right": [
-    "tray",
     "custom/updates",
-    "network",
     "wireplumber",
-    "battery",
+    "custom/clipboard",
+    "tray",
     "custom/power",
   ],
   "wlr/taskbar": {
